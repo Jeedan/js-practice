@@ -10,22 +10,40 @@
 /* Center everything */
 body {
     font-family: 'Roboto', sans-serif;
-    width: 100vw;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     margin: 0;
     overflow: hidden;
-    align-items: center;
 }
 
 .container{
     display: flex;
-    flex-direction: column;
-    width: 60vw; 
+    flex-direction: row;
+    width: 100vw; 
     height: 100vh;
-    margin: 100px 0 0;
-    border: 1px solid black;
+    padding: 10px 10px;
+    border: 1px solid red;
     overflow: hidden;
+}
+
+.nav-links{
+    background-color: white;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2px;
+    border: 1px solid black;
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    width: 60vw;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid black;
 }
 
 h1{
@@ -40,6 +58,25 @@ p{
 }
 
 .navigation{
-    display: flex;
-    flex-direction: column;
+    position: relative;
+}
+
+.hamburger{
+    z-index:1;
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: orangered;
+}
+
+nav span{
+    font-size: 25px;
+    z-index: 2;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: white;
 }
