@@ -41,6 +41,7 @@ body {
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s linear;
+    transform-origin: center center;
 }
 
 .container.show-nav .circle {
@@ -116,7 +117,7 @@ nav ul li + li + li{
 }
 
 .content img{
-    max-width: 100%;;
+    max-width: 100%;
 }
 
 .content {
