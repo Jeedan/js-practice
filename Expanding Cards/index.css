@@ -1,0 +1,72 @@
+/* Roboto Font regular 400 and bold 700  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+
+}
+
+/* Center everything */
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+    gap: 1rem;
+}
+
+/* in my solution i changed the width not flex */
+.card{
+    cursor: pointer;
+    flex: 0.5;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border-radius: 50px;
+    transition: flex 0.5s ease-in;
+    position: relative;
+}
+
+.card h3{
+    font-size: 24px;
+    visibility: hidden;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+    margin: 0;
+    transition: opacity 0.25s ease 0.5s;
+}
+
+.active {
+    flex: 5;
+}
+
+.active h3{
+    opacity: 1;
+    visibility:visible;
+}
+
+@media(max-width: 480px){
+    .container{
+        width:100vw;
+    }
+
+    .container > .card:nth-child(n+4),
+    .container > .card:nth-child(n+5),
+    .container > .card:nth-child(n+6){
+        display: none;
+    }   
+}
