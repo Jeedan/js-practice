@@ -20,8 +20,5 @@ const firstVersion = () => {
 
 btn.addEventListener("click", () => {
 	wrapper.classList.toggle("expand");
-
-	if (wrapper.classList.contains("expand")) {
-		searchInput.focus();
-	}
+	searchInput.focus();
 });
