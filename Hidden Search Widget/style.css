@@ -17,6 +17,7 @@ body {
     justify-content: center;
     margin: 0;
     overflow: hidden;
+    color: #fdfdfd;
     background-color: rgb(105, 30, 255);
 }
 
@@ -24,12 +25,46 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     width: 50vw;
-    border: 2 solid black;
-    border: 1px solid black;
 }
 
+.wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transition: width 0.2s linear;
+}
+
+.expand{
+    width: 200px;
+}
+
+.wrapper.expand button{
+    right: 10px;
+}
+
+/* if the wrapper is expanded, set input opacity to 100% */
+.wrapper.expand input{
+    opacity: 1;
+}
+
+button{
+    border: 0;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    transition: right 0.2s ease;
+} 
+
+/* 
 button{
     position: absolute;
     border: 0;
@@ -43,32 +78,28 @@ button{
     align-items: center;
     justify-content: center;
 
-}
+} */
+
+/* first version where we move button with translateX */
+/* .slideX{
+    transform: translateX(80px);
+} */
 
 button i {
     font-size: 18px;
-}
-
-.slideX{
-    transform: translateX(80px);
+    color: #333;
 }
 
 input{
-    width: 0px;
+    width: 100%;
     height: 40px;
     border:0;
     padding: 0 20px;
     opacity: 0;
-    transition: width 0.4s ease, opacity 0.2s linear;
-    background-color: #fff;
+    transition: width 0.2s ease, opacity 0.2s ease;
 }
 
 input:focus{
     outline:groove;
     outline-width: 1px;
-}
-
-.expand{
-    width: 200px;
-    opacity: 100%;
 }

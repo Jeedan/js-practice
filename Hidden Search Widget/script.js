@@ -1,5 +1,6 @@
 const btn = document.querySelector("#expandBtn");
 const searchInput = document.querySelector("#search");
+const wrapper = document.querySelector(".wrapper");
 
 // slide button on X axis
 // we want the button to slide to the edge of the input
@@ -9,11 +10,18 @@ const searchInput = document.querySelector("#search");
 // (sliderWidth/2)-(btnWidth/2)
 // use that result to translate the button
 //(80px in this case)
-btn.addEventListener("click", () => {
+const firstVersion = () => {
 	searchInput.classList.toggle("expand");
 	btn.classList.toggle("slideX");
+	if (wrapper.classList.contains("expand")) {
+		searchInput.focus();
+	}
+};
 
-	if (searchInput.classList.contains("expand")) {
+btn.addEventListener("click", () => {
+	wrapper.classList.toggle("expand");
+
+	if (wrapper.classList.contains("expand")) {
 		searchInput.focus();
 	}
 });
