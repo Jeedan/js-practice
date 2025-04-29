@@ -8,19 +8,29 @@ const maxBlur = 30;
 const blurMultiplier = 1.5;
 blurryImage.style.filter = `blur(${maxBlur}px)`;
 
+const calcPercentage = (current, value = 1, multiplier = 1) => {
+	return value * Math.min(1 - (current * multiplier) / 100, 1);
+};
+
 let currentBlur = setInterval(() => {
 	if (currentPercentage < 100) {
 		currentPercentage++;
 		progress.innerHTML = currentPercentage;
 
-		let formula =
-			maxBlur *
-			Math.min(1 - (currentPercentage * blurMultiplier) / 100, 1);
-		loadContainer.style.opacity = Math.min(
-			1 - (currentPercentage * 0.98) / 100,
-			1
+		let formula = calcPercentage(
+			currentPercentage,
+			maxBlur,
+			blurMultiplier
 		);
+
+		loadContainer.style.opacity = calcPercentage(currentPercentage);
 		blurryImage.style.filter = `blur(${formula}px)`;
-		console.log("opactiy", loadContainer.style.opacity);
+	} else {
+		clearInterval(currentBlur);
+		loadContainer.addEventListener("transitioned", () => {
+			loadContainer.style.display = "none";
+		});
+		// triggers the CSS transition
+		loadContainer.style.opacity = 0;
 	}
 }, loadingInterval);
