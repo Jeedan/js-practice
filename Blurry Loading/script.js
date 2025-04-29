@@ -8,6 +8,8 @@ const maxBlur = 30;
 const blurMultiplier = 1.5;
 blurryImage.style.filter = `blur(${maxBlur}px)`;
 
+// https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+//
 const calcPercentage = (current, value = 1, multiplier = 1) => {
 	return value * Math.min(1 - (current * multiplier) / 100, 1);
 };
@@ -15,7 +17,7 @@ const calcPercentage = (current, value = 1, multiplier = 1) => {
 let currentBlur = setInterval(() => {
 	if (currentPercentage < 100) {
 		currentPercentage++;
-		progress.innerHTML = currentPercentage;
+		progress.innerText = `${currentPercentage}`;
 
 		let formula = calcPercentage(
 			currentPercentage,
