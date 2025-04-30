@@ -9,11 +9,13 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("scroll", () => {
-	boxSlide.forEach((b) => {
+	boxSlide.forEach((b, i) => {
 		const boxTop = b.getBoundingClientRect().top;
 
 		if (boxTop < triggerBox) {
-			b.classList.add("slide");
+			setTimeout(() => {
+				b.classList.add("slide");
+			}, i * 100);
 		} else if (boxTop > triggerBox) {
 			b.classList.remove("slide");
 		}
