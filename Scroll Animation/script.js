@@ -8,16 +8,27 @@ window.addEventListener("resize", () => {
 	triggerBox = window.innerHeight - boxSlide[0].offsetHeight;
 });
 
-window.addEventListener("scroll", () => {
-	boxSlide.forEach((b, i) => {
-		const boxTop = b.getBoundingClientRect().top;
+let lastRun = 0;
+const throttleDelay = 50;
 
-		if (boxTop < triggerBox) {
-			setTimeout(() => {
-				b.classList.add("slide");
-			}, i * 100);
-		} else if (boxTop > triggerBox) {
-			b.classList.remove("slide");
-		}
-	});
+window.addEventListener("scroll", () => {
+	const now = Date.now();
+	if (now - lastRun >= throttleDelay) {
+		slideBoxes();
+		lastRun = now;
+	}
 });
+
+const slideBoxes = () => {
+	requestAnimationFrame(() => {
+		boxSlide.forEach((b, i) => {
+			const boxTop = b.getBoundingClientRect().top;
+
+			if (boxTop < triggerBox && !b.classList.contains("slide")) {
+				b.classList.add("slide");
+			} else if (boxTop > triggerBox && b.classList.contains("slide")) {
+				b.classList.remove("slide");
+			}
+		});
+	});
+};
