@@ -124,7 +124,6 @@ section#right::before{
 }
 
 @media (max-width: 800px) {
-
     .container{
         flex-direction: column;
         height: auto;
