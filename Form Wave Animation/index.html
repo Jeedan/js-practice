@@ -18,21 +18,15 @@
 	<body>
 		<div class="container">
 			<h1>Please Login</h1>
-			<label class="label-email" for="email">
-				<span>E</span><span>m</span><span>a</span><span>i</span
-				><span>l</span></label
-			>
-			<input type="text" placeholder="" name="email" id="email" />
-			<label class="label-password" for="password"
-				><span>P</span><span>a</span><span>s</span><span>s</span
-				><span>w</span><span>o</span><span>r</span><span>d</span></label
-			>
-			<input
-				type="password"
-				placeholder=""
-				name="password"
-				id="password"
-			/>
+			<div class="form-control">
+				<input type="text" name="email" id="email" required />
+				<label class="label-email" for="email">Email</label>
+			</div>
+			<div class="form-control">
+				<input type="password" name="password" id="password" required />
+
+				<label class="label-password" for="password">Password</label>
+			</div>
 			<button class="btn">Login</button>
 			<p>Don't have an account? <a href="/">Register</a></p>
 		</div>
