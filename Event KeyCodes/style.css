@@ -1,0 +1,65 @@
+/* Roboto Font regular 400 and bold 700  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+
+}
+
+/* Center everything */
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: rgb(240, 240, 240);
+}
+
+#info {
+    display:inline-block;
+    padding: 0 1rem;
+    min-width: 200px;
+}
+
+.container {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 1rem;
+    padding: 0 1rem;
+}
+
+.container p{
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.keyContainer{
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    margin: 0 1rem;
+    width: 100%;
+    min-width: 150px;
+    border: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), 0 0px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f1f1f1;
+}
+
+.container.hide{
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    body{
+        flex-direction: column;
+        gap: 2rem;
+    }
+} 
