@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Font Awesome cdn -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- css -->
+		<link rel="stylesheet" href="style.css" />
+		<title>FAQ Collapse</title>
+	</head>
+	<body>
+		<h1>Frequently Asked Questions</h1>
+		<div class="faq-container">
+			<h3>Why shouldn't we trust atoms?</h3>
+			<button class="btn">
+				<i id="close" class="fa-solid fa-circle-xmark collapse"></i>
+				<i id="open" class="fa-solid fa-angle-down"></i>
+			</button>
+
+			<div id="collapse-container" class="collapse">
+				<p>They make up everything</p>
+				<i id="green-comment" class="fa-regular fa-comment"></i>
+				<i id="blue-comment" class="fa-regular fa-comment"></i>
+			</div>
+		</div>
+		<div class="faq-container">
+			<h3>What do you call someone with no body and no nose?</h3>
+			<button class="btn">
+				<i id="close" class="fa-solid fa-circle-xmark collapse"></i>
+				<i id="open" class="fa-solid fa-angle-down"></i>
+			</button>
+			<div id="collapse-container" class="collapse">
+				<p>Nobody knows.</p>
+				<i id="green-comment" class="fa-regular fa-comment"></i>
+				<i id="blue-comment" class="fa-regular fa-comment"></i>
+			</div>
+		</div>
+		<div class="faq-container">
+			<h3>What's the object-oriented way to become Wealthy?</h3>
+			<button class="btn">
+				<i id="close" class="fa-solid fa-circle-xmark collapse"></i>
+				<i id="open" class="fa-solid fa-angle-down"></i>
+			</button>
+			<div id="collapse-container" class="collapse">
+				<p>Inheritance</p>
+				<i id="green-comment" class="fa-regular fa-comment"></i>
+				<i id="blue-comment" class="fa-regular fa-comment"></i>
+			</div>
+		</div>
+
+		<div class="faq-container">
+			<h3>How many tickles does it take to tickle an octopus?</h3>
+			<button class="btn">
+				<i id="close" class="fa-solid fa-circle-xmark collapse"></i>
+				<i id="open" class="fa-solid fa-angle-down"></i>
+			</button>
+			<div id="collapse-container" class="collapse">
+				<p>Ten-tickles</p>
+				<i id="green-comment" class="fa-regular fa-comment"></i>
+				<i id="blue-comment" class="fa-regular fa-comment"></i>
+			</div>
+		</div>
+
+		<div class="faq-container">
+			<h3>What is 1 + 1?</h3>
+			<button class="btn">
+				<i id="close" class="fa-solid fa-circle-xmark collapse"></i>
+				<i id="open" class="fa-solid fa-angle-down"></i>
+			</button>
+			<div id="collapse-container" class="collapse">
+				<p>Depends on who are you asking.</p>
+				<i id="green-comment" class="fa-regular fa-comment"></i>
+				<i id="blue-comment" class="fa-regular fa-comment"></i>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

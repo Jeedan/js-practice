@@ -1,0 +1,116 @@
+/* Roboto Font regular 400 and bold 700  */
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+
+}
+
+/* Center everything */
+body {
+    font-family: 'Muli', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-color: #e1e1e1;
+}
+
+h1{
+    margin: 1rem;
+}
+
+.faq-container{
+    position: relative; 
+    overflow: hidden;
+    background-color: #e1e1e1;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 0.75rem 0;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 900px;
+    min-height: 100px;
+}
+
+.faq-container h3{
+    width: 80%;
+}
+
+.faq-container p{
+    font-size: 1rem;
+    font-weight: bold;
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.faq-container .btn{
+    cursor: pointer;
+    position: absolute;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    left: 90%;
+    top: 30px;    
+    background-color: transparent;
+}
+
+.btn:focus{
+    outline: none;
+}
+.btn:hover #open{
+    opacity: 0.4;
+}
+
+.btn:hover #close{
+    opacity: 1;
+}
+
+#open{
+    opacity: 1;
+}
+
+#close{
+    opacity: 0.4;
+}
+
+#green-comment, #blue-comment{
+    z-index: 200;
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.2;
+}
+
+#green-comment{
+    left: 20px;
+    top: 20px;
+    color: #00ff9db5;
+}
+
+#blue-comment{
+    left: -25px;
+    top: -15px;
+    font-size: 8rem;
+    color: #25a8ffb5;
+    transform: rotateY(180deg);
+}
+
+/* hide the container when we press the X button */
+#collapse-container.collapse,
+#open.collapse, 
+#close.collapse{
+    display: none;
+}
+
+.faq-container.collapse{
+    background-color: #eee;
+}
+/* 
+@media (min-width:480) {
+
+} */
