@@ -26,7 +26,7 @@ h1{
     position: relative; 
     overflow: hidden;
     background-color: #e1e1e1;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     border: 1px solid black;
     margin: 0.75rem 0;
@@ -34,6 +34,7 @@ h1{
     width: 100%;
     max-width: 900px;
     min-height: 100px;
+    transition: 0.3s ease;
 }
 
 .faq-container h3{
@@ -79,27 +80,6 @@ h1{
     opacity: 0.4;
 }
 
-#green-comment, #blue-comment{
-    z-index: 200;
-    position: absolute;
-    font-size: 8rem;
-    opacity: 0.2;
-}
-
-#green-comment{
-    left: 20px;
-    top: 20px;
-    color: #00ff9db5;
-}
-
-#blue-comment{
-    left: -25px;
-    top: -15px;
-    font-size: 8rem;
-    color: #25a8ffb5;
-    transform: rotateY(180deg);
-}
-
 /* hide the container when we press the X button */
 #collapse-container.collapse,
 #open.collapse, 
@@ -110,3 +90,43 @@ h1{
 .faq-container.collapse{
     background-color: #eee;
 }
+
+/* Get Icons via Unicode and use them via CSS instead of in html */
+.faq-container.collapse::before,
+.faq-container.collapse::after{
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    color: #00ff9db5;
+    font-size: 7rem;
+    opacity: 0.2;
+    left: 20px;
+    top: 20px;
+    z-index: 0;
+}
+
+.faq-container.collapse::before{
+    left: -25px;
+    top: -15px;
+    color: #25a8ffb5;
+    transform: rotateY(180deg);
+}
+
+/* 
+#green-comment, #blue-comment{
+    z-index: 0;
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.2;
+}
+#green-comment{
+    left: 20px;
+    top: 20px;
+    color: #00ff9db5;
+}
+#blue-comment{
+    left: -25px;
+    top: -15px;
+    color: #25a8ffb5;
+    transform: rotateY(180deg);
+} */

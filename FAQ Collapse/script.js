@@ -1,4 +1,3 @@
-const btn = document.querySelector(".btn");
 const btns = document.querySelectorAll(".btn");
 const faqContainers = document.querySelectorAll(".faq-container");
 const faqOpens = document.querySelectorAll("#open");
